@@ -14,9 +14,9 @@ async function translateDatasetAnmalda(fileCSV) {
     return data;
 }
 
-let skane_lagforda_brott_2003 = translateDatasetLagforda("lagforda_brott/y2003/lagforda_brott_2003_skane.csv");
+let skane_lagforda_brott_2003 = translateDatasetLagforda("lagforda_brott/y2003/lagforda_brott_2003_skane");
 console.log(skane_lagforda_brott_2003);
 
 
-let blekinge_anmalda_brott_2003 = translateDatasetAnmalda("anmalda_brott/y2003/anmalda_brott_2003_blekinge.csv");
+let blekinge_anmalda_brott_2003 = translateDatasetAnmalda("anmalda_brott/y2003/anmalda_brott_2003_blekinge");
 console.log(blekinge_anmalda_brott_2003);
