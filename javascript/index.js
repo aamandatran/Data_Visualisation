@@ -1,4 +1,4 @@
-async function translateDataset(fileCSV) {
+async function translateDatasetLagforda(fileCSV) {
     let data = await d3.dsv(";", fileCSV, d => {
         return d.Summa_domar_strafforelagganden_och_Atalsunderlatelser_darav_domar;
     });
@@ -6,5 +6,17 @@ async function translateDataset(fileCSV) {
     return data;
 }
 
-let skane_lagfordabrott_2003 = translateDataset("lagfordabrott_2003_skane.csv");
-console.log(skane_lagfordabrott_2003);
+async function translateDatasetAnmalda(fileCSV) {
+    let data = await d3.dsv(";", fileCSV, d => {
+        return d.Hela_aret;
+    });
+
+    return data;
+}
+
+let skane_lagforda_brott_2003 = translateDatasetLagforda("lagforda_brott/y2003/lagforda_brott_2003_skane.csv");
+console.log(skane_lagforda_brott_2003);
+
+
+let blekinge_anmalda_brott_2003 = translateDatasetAnmalda("anmalda_brott/y2003/anmalda_brott_2003_blekinge.csv");
+console.log(blekinge_anmalda_brott_2003);
